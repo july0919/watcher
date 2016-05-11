@@ -1,7 +1,7 @@
 #!/usr/bin/python
- 
-The program finds faces in a camera image or video stream and displays a red box around them.
- 
+#The program finds faces in a camera image or video stream and displays a red box around them.
+#To run this file, python Camera_Face_Detection.py --cascade=face.xml 0
+
 import sys
 import cv2.cv as cv
 from optparse import OptionParser
