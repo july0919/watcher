@@ -7,3 +7,4 @@ with picamera.PiCamera() as picam:
     time.sleep(10)
     picam.stop_preview()
     picam.close()
+#sudo python camera_preview.py
