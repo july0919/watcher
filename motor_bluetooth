@@ -1,0 +1,29 @@
+#include <SoftwareSerial.h>
+#include <Servo.h>
+
+SoftwareSerial MySerial(4, 5); // RX, TX
+Servo MyServo;
+
+
+void setup() {
+  MyServo.attach(9);
+  MySerial.begin(9600);
+}
+
+void loop() {
+  while(MySerial.available()) {
+    int data = MySerial.read();
+    if(data == 97) {
+      for (int pos = 0; pos <= 180; pos += 1) {
+        MyServo.write(pos);
+        delay(5);
+      }
+    }
+    if(data == 98) {
+      for (int pos = 180; pos >= 0; pos -= 1) {
+        MyServo.write(pos);
+        delay(5);
+      }
+    }
+  }
+}
